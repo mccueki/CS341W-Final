@@ -1,0 +1,54 @@
+/* src/App.css */
+.login-container {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 18px;
+    color: hsl(25, 47%, 15%); 
+    background-color: hsl(27, 66%, 92%); 
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .login-container h2 {
+    text-align: center;
+  }
+  
+  .login-container form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .login-container form div {
+    margin-bottom: 15px;
+  }
+  
+  .login-container label {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  
+  .login-container input {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .login-container button {
+    padding: 10px;
+    font-size: 16px;
+    background-color: hsl(10, 79%, 60%);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .login-container .error {
+    color: red;
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+  

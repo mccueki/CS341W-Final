@@ -1,0 +1,78 @@
+<h2>Balances</h2>
+{{#each users}}
+  <h3>
+    {{this.username}} 
+    <!-- Reset password button -->
+    <button onclick="showResetPasswordForm('{{this.username}}')">Reset Password</button>
+  </h3>
+
+  <div id="reset-password-form-{{this.username}}" style="display: none;">
+    <label for="new-password-{{this.username}}">New Password:</label>
+    <input type="password" id="new-password-{{this.username}}" placeholder="Enter new password">
+    <button onclick="resetPassword('{{this.username}}')">Submit</button>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Day</th>
+        <th>Balance</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each this.balances}}  <!-- Loop through each user's balances -->
+        <tr>
+          <td>{{this.day}}</td>  <!-- Display the day -->
+          <td>{{this.amount}}</td>  <!-- Display the balance amount -->
+        </tr>
+      {{else}}
+        <tr>
+          <td colspan="2">No balances available.</td>
+        </tr>
+      {{/each}}
+      <tr>
+        <td><strong>Bank Balance:</strong></td>
+        <td><strong>{{this.bankBalance}}</strong></td>  <!-- Display the user's bank balance -->
+      </tr>
+    </tbody>
+  </table>
+{{else}}
+  <p>No users found.</p>
+{{/each}}
+
+<script>
+  function showResetPasswordForm(username) {
+    const form = document.getElementById(`reset-password-form-${username}`);
+    form.style.display = 'block';  // Show the password input form
+  }
+
+  function resetPassword(username) {
+    const newPassword = document.getElementById(`new-password-${username}`).value;
+
+    if (!newPassword) {
+      alert('Please enter a new password.');
+      return;
+    }
+
+    // Send a request to reset the password for the selected user
+    fetch(`/api/reset-password/${username}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ newPassword })
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.message) {
+        alert(data.message);
+        document.getElementById(`reset-password-form-${username}`).style.display = 'none'; // Hide the form
+      } else {
+        alert('Password reset failed.');
+      }
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      alert('Error resetting password.');
+    });
+  }
+</script>
+

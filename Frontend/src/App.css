@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  nav ul {
+    display: flex;
+    list-style: none;
+    padding: 10px 10px;
+    justify-content: center;
+    background-color: hsl(27, 66%, 92%); 
+    margin-bottom: 20px;
+    border-radius: 8px;
+  }
+  nav li {
+    margin: 0 15px;
+  }
+  
+  nav a {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 700;
+    color: hsl(10, 79%, 65%); 
+    transition: color 0.3s ease;
+  }
+  
+  nav a:hover {
+    color: hsl(186, 34%, 60%); 
+  }
+  
+  nav a:active {
+    color: hsl(25, 47%, 15%); 
+  }
+  
+  nav .home-link {
+    font-weight: 700;
+  }

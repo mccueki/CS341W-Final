@@ -1,0 +1,25 @@
+.clickable-box {
+    text-align: center;
+  }
+  
+  .graphic-box {
+    display: inline-block;
+    padding: 20px 250px 10px;
+    background-color:hsl(10, 79%, 65%); 
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .graphic-box:hover {
+    background-color: hsl(10, 79%, 60%); 
+    transform: scale(1.05); 
+  }
+  
+  .graphic-box span {
+    display: block;
+  }
+  

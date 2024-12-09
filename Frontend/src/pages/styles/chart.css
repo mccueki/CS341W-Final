@@ -1,0 +1,110 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 18px;
+  color: hsl(25, 47%, 15%); 
+  background-color: hsl(27, 66%, 92%); 
+}
+
+/* Container for the chart and its labels */
+.expenses-chart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+  justify-content: center;
+  width: 100%;
+  padding: 20px 400px 10px;
+}
+
+.chart {
+  display: flex;
+  justify-content: space-evenly;  
+  gap: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  height: 300px;  
+  align-items: flex-end;  
+  border-radius: 8px;
+  background-color: hsl(33, 100%, 98%); 
+}
+
+.bar {
+  position: relative;  /* Positioning for the bar and the amount inside it */
+  width: 40px;
+  background-color: hsl(10, 79%, 65%); 
+  border-radius: 5px;
+  transition: background-color 0.3s ease;  
+}
+
+.bar.highlight {
+  background-color: hsl(186, 34%, 60%); 
+}
+
+.bar:hover {
+  background-color: hsl(10, 79%, 60%);  
+}
+
+.expense-value {
+  position: absolute;
+  top: -25px;  /* Position the value above the bar */
+  left: 50%;
+  transform: translateX(-50%);
+  visibility: hidden; 
+  opacity: 0;
+  transition: visibility 0s, opacity 0.3s ease;  
+  background-color:  hsl(186, 34%, 60%);
+  color: white;
+  padding: 5px;
+  border-radius: 3px;
+}
+
+.bar:hover .expense-value {
+  visibility: visible;  /* Show value on hover */
+  opacity: 1;  /* Make the value fully visible */
+}
+
+.labels {
+  display: flex;
+  justify-content: space-evenly;  /* Center the day labels */
+  width: 100%;
+  gap: 10px;
+}
+
+.day-label {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  color: hsl(28, 10%, 53%);  
+  margin-top: 5px;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 375px) {
+  .chart {
+    height: 250px;  /* Adjust height for mobile */
+  }
+
+  .bar {
+    width: 30px;  /* Smaller bar width for mobile */
+  }
+
+  .day-label {
+    font-size: 12px;  /* Smaller text for mobile */
+  }
+}
+
+/* Responsive Design for Desktop */
+@media (min-width: 1440px) {
+  .chart {
+    height: 350px;  /* Taller chart for larger screens */
+  }
+
+  .bar {
+    width: 50px;  /* Wider bars for larger screens */
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "users": [
+    {
+      "username": "1233",
+      "password": "$2a$10$f4GJ7E.LZKJtKchXHFDIkedMKOtk88NX7lHr5k5LHh.NztzYnk5rq",
+      "balances": [
+        {
+          "day": "mon",
+          "amount": 0
+        },
+        {
+          "day": "tue",
+          "amount": 0
+        },
+        {
+          "day": "wed",
+          "amount": 0
+        },
+        {
+          "day": "thu",
+          "amount": 0
+        },
+        {
+          "day": "fri",
+          "amount": 20
+        },
+        {
+          "day": "sat",
+          "amount": 10
+        },
+        {
+          "day": "sun",
+          "amount": 0
+        }
+      ],
+      "bankBalance": 200
+    },
+    {
+      "username": "karl",
+      "password": "$2a$10$p7fedaoUL7Mnv3tRHmbk2.cFsIdHRp1i3ONDIoLWvxmxt8XqGSiWK",
+      "balances": [
+        {
+          "day": "mon",
+          "amount": 0
+        },
+        {
+          "day": "tue",
+          "amount": 30
+        },
+        {
+          "day": "wed",
+          "amount": 0
+        },
+        {
+          "day": "thu",
+          "amount": 10
+        },
+        {
+          "day": "fri",
+          "amount": 0
+        },
+        {
+          "day": "sat",
+          "amount": 30.2
+        },
+        {
+          "day": "sun",
+          "amount": 20
+        }
+      ],
+      "bankBalance": 300
+    }
+  ]
+}
